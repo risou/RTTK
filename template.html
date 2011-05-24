@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title><TMPL_VAR NAME="title" ESCAPE=HTML></title>
+		<style type="text/css">
+			<!--
+<TMPL_VAR NAME="css" ESCAPE=HTML>
+			-->
+		</style>
+	</head>
+
+	<body>
+		<section>
+			<article>
+				<TMPL_LOOP NAME="paragraph">
+				<p>
+					<TMPL_LOOP NAME="line">
+					<span class="<TMPL_VAR NAME="class" ESCAPE=HTML>"><TMPL_VAR NAME="text" ESCAPE=HTML></span><br/>
+					</TMPL_LOOP>
+				</p>
+				</TMPL_LOOP>
+			</article>
+		</section>
+	</body>
+
+</html>
+
