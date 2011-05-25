@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title><TMPL_VAR NAME="title" ESCAPE=HTML></title>
+	</head>
+
+	<body>
+		<section>
+			<article>
+			<table>
+				<colgroup span="3">
+					<col span="1" width="100"/>
+					<col span="1" width="150"/>
+					<col span="1" width="700"/>
+				</colgroup>
+				<tbody>
+					<TMPL_LOOP NAME="line">
+					<tr style="color:<TMPL_VAR NAME="color" ESCAPE=HTML>;">
+						<td><TMPL_VAR NAME="time" ESCAPE=HTML></td>
+						<td><TMPL_VAR NAME="name" ESCAPE=HTML></td>
+						<td><TMPL_VAR NAME="part" ESCAPE=HTML></td>
+					</tr>
+					</TMPL_LOOP>
+				</tbody>
+			</table>
+			</article>
+		</section>
+	</body>
+</html>
+
