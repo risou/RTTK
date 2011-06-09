@@ -14,11 +14,14 @@
 		<section>
 			<article>
 				<TMPL_LOOP NAME="paragraph">
-				<p>
+				<table>
 					<TMPL_LOOP NAME="line">
-					<span class="<TMPL_VAR NAME="class" ESCAPE=HTML>"><TMPL_VAR NAME="text" ESCAPE=HTML></span><br/>
+					<tr>
+						<td width="60" class="<TMPL_VAR NAME="class" ESCAPE=HTML>"><TMPL_VAR NAME="character" ESCAPE=HTML></td>
+						<td class="<TMPL_VAR NAME="class" ESCAPE=HTML>"><TMPL_VAR NAME="text" ESCAPE=HTML></td>
+					</tr>
 					</TMPL_LOOP>
-				</p>
+				</table>
 				</TMPL_LOOP>
 			</article>
 		</section>
