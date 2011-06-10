@@ -73,7 +73,7 @@ while (not $io->eof) {
 
 		if ($line =~ /^(.*)?\t(.*)$/) {
 			$part{'class'} = $character{Encode::encode('utf-8', $1)};
-			$part{'character'} = $character{Encode::encode('utf-8', $1)};
+			$part{'character'} = Encode::encode('utf-8', $1);
 			$part{'text'} = Encode::encode('utf-8', $2);
 		} else {
 			$part{'class'} = '';
