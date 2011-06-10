@@ -43,6 +43,8 @@ my %param;
 my @plist;
 my $list = [];
 
+$param{'title'} = $htmlname;
+
 my $cssstr;
 foreach (keys %color) {
 	$cssstr .= "\t\t\t\t.$_ { color: $color{$_} }\n";
