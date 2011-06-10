@@ -12,14 +12,20 @@ my $htmlname = shift;
 my %character = (
 	'榛奈' => 'haruna',
 	'はるね' => 'haruna',
+	'智蔵' => 'haruna',
 	'うに' => 'uni',
+	'神無' => 'uni',
 	'遥' => 'haruka',
 	'はるか' => 'haruka',
+	'今野' => 'haruka',
 	'みのり' => 'minori',
+	'ｒｉｓｏｕ' => 'minori',
 	'ゆき' => 'yuki',
 	'有希' => 'yuki',
+	'吉村' => 'yuki',
 	'穂波' => 'honami',
 	'ほなみ' => 'honami',
+	'らぃえ' => 'honami',
 	'GM' => 'gm',
 	'ＧＭ' => 'gm',
 );
@@ -65,12 +71,14 @@ while (not $io->eof) {
 		$list = [];
 	} else {
 
-		if ($line =~ /^(.*)?\t/) {
+		if ($line =~ /^(.*)?\t(.*)$/) {
 			$part{'class'} = $character{Encode::encode('utf-8', $1)};
+			$part{'character'} = $character{Encode::encode('utf-8', $1)};
+			$part{'text'} = Encode::encode('utf-8', $2);
 		} else {
 			$part{'class'} = '';
+			$part{'text'} = Encode::encode('utf-8', $line);
 		}
-		$part{'text'} = Encode::encode('utf-8', $line);
 
 		push @$list, \%part;
 	}
